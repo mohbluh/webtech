@@ -1,0 +1,10 @@
+/* stijl.css - labo 3, donut (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --oranje: #ec4b03;
+    --paars: #b99ec1;
+    --geel: #f9b700;
+}
+
+/* === your rules === */
