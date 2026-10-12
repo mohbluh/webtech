@@ -5,6 +5,7 @@
     --oranje: #ec4b03;
     --paars: #b99ec1;
     --geel: #f9b700;
+    --zwart: black;
 }
 
 /* === your rules === */
@@ -18,7 +19,7 @@ main {
     height: 90vh;
     width: 90vh;
     margin: 5vh auto;
-    border: 0.75rem solid black;
+    border: 0.75rem solid var(--zwart);
 }
 
 div {
@@ -27,7 +28,7 @@ div {
     width: 70%;
     margin: 15%;
     border-radius: 50%;
-    border: 0.75rem solid black;
+    border: 0.75rem solid var(--zwart);
     overflow: hidden;
 }
 
@@ -35,8 +36,9 @@ h1 {
     background-color: var(--geel);
     height: 90%;
     width: 90%;
-    margin: -7%;
-    border: 0.75rem solid black;
-    padding-top: 17.5rem;
+    margin-left: -7%;
+    margin-top: -7%;
+    border: 0.75rem solid var(--zwart);
+    padding-top: 22.5vh;
     font-size: 5rem;
 }

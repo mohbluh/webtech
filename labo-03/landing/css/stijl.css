@@ -5,6 +5,9 @@
     --banner:  #c8b8ff;
     --link: #5551ff;
     --hero: #779cee;
+    --knop-hover: gray;
+    --black: black;
+    --white: white;
 }
 
 /* === your rules === */
@@ -43,7 +46,7 @@ nav li {
 }
 
 nav a {
-    color: black;
+    color: var(--black);
     text-decoration: none;
     padding: 0.5rem 1.5rem;
 }
@@ -74,23 +77,22 @@ article p {
 }
 
 .knop {
-    background-color: black;
+    background-color: var(--black);
     display: inline-block;
     text-decoration: none;
-    color: white;
+    color: var(--white);
     padding: 1rem 2rem;
     border-radius: 0.5rem;
 }
 
 .knop:hover, .knop:focus {
     text-decoration: none;
-    color: gray;
+    color: var(--knop-hover);
 }
 
 .afbeelding img {
-    width: 50%;
-    height: 50%;
-    margin: 4rem;
+    width: 60%;
+    margin: 3rem;
 }
 
 article, .afbeelding {
