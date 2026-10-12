@@ -2,7 +2,99 @@
 
 /* === tokens === */
 :root {
-
+    --banner:  #c8b8ff;
+    --link: #5551ff;
+    --hero: #779cee;
 }
 
 /* === your rules === */
+body {
+    font-family: Arial, sans-serif;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+.banner {
+    background-color: var(--banner);
+    text-align: center;
+    padding: 1.4rem;
+    font-size: 1.2rem;
+}
+
+.banner a {
+    color: var(--link);
+}
+
+header {
+    text-align: right;
+    padding: 1rem;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+}
+
+main {
+    min-height: 80vh;
+    background-color: var(--hero);
+}
+
+article {
+    padding: 4rem;
+}
+.bovenkop {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+article p {
+    max-width: 35rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.knop {
+    background-color: black;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.knop:hover, .knop:focus {
+    text-decoration: none;
+    color: gray;
+}
+
+.afbeelding img {
+    width: 50%;
+    height: 50%;
+    margin: 4rem;
+}
+
+article, .afbeelding {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}

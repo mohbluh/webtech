@@ -8,3 +8,35 @@
 }
 
 /* === your rules === */
+body {
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+main {
+    background-color: var(--oranje);
+    height: 90vh;
+    width: 90vh;
+    margin: 5vh auto;
+    border: 0.75rem solid black;
+}
+
+div {
+    background-color: var(--paars);
+    height: 70%;
+    width: 70%;
+    margin: 15%;
+    border-radius: 50%;
+    border: 0.75rem solid black;
+    overflow: hidden;
+}
+
+h1 {
+    background-color: var(--geel);
+    height: 90%;
+    width: 90%;
+    margin: -7%;
+    border: 0.75rem solid black;
+    padding-top: 17.5rem;
+    font-size: 5rem;
+}

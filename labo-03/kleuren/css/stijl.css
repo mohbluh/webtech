@@ -2,30 +2,35 @@
 
 /* === tokens === */
 :root {
-
+    --tomato: tomato;
+    --orangered: orangered;
+    --coral: coral;
+    --lightsalmon: lightsalmon;
+    --darkornage: darkorange;
 }
 
 /* === your rules === */
 .tomato {
-    background-color: tomato;
+    background-color: var(--tomato);
 }
 .orangered {
-    background-color: orangered;
+    background-color: var(--orangered);
 }
 .coral {
-    background-color: coral;
+    background-color: var(--coral);
 }
 .lightsalmon {
-    background-color: lightsalmon;
+    background-color: var(--lightsalmon);
 }
 .darkorange {
-    background-color: darkorange;
+    background-color: var(--darkornage);
 }
 
 body {
     color: white;
     font-family: arial;
     text-align: center;
+    list-style: none
 }
 
 ul {
@@ -35,16 +40,19 @@ ul {
 
 li {
     height: 20vh;
-}
-
-li {
     padding-top: 7vh;
 }
+
 h2 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     letter-spacing: 0.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
+
+h2 + p {
+    font-size: 0.8rem;
+}
+
 span:nth-child(2) {
     margin-left: 0.7rem;
     margin-right: 0.7rem;

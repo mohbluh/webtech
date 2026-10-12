@@ -4,38 +4,43 @@
 :root {
     --text: #282827;
     --geel: #fccc00;
+    --knop-hover: #333333; 
+    --text-knop: white;
 }
 
 /* === your rules === */
 body {
     font-family: Arial;
-    padding: 12rem 5rem;
+    padding-top: 12rem;
     text-align: center;
     color: var(--text);
-}
-h2,
-p {
-    margin-bottom: 1.2rem;
+    max-width: 40rem;
+    margin: 0 auto;
 }
 h2 {
-    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 4.5rem;
+    line-height: 1.1;
 }
 h2 span {
     border-bottom: 0.8rem solid var(--geel);
     border-radius: 100%;
 }
 p {
-    line-height: 1.6rem;
+    line-height: 1.6;
     margin-bottom: 2rem;
+    font-size: 1.25rem;
 }
 a {
     background-color: var(--text);
-    padding: 0.7rem 1.4rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 0.8rem;
-    color: white;
+    color: var(--text-knop);
     text-decoration: none;
+    font-size: 0.875rem;
+    display: inline-block;
 }
 a:hover,
 a:focus {
-    background-color: red;
+    background-color: var(--knop-hover);
 }

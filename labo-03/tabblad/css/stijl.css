@@ -4,25 +4,34 @@
 :root {
     --achtergrond: #ff816f;
     --tabblad: #ffd500;
+    --kaart: white;
+    --rand-kleur: black;
 }
 
 /* === your rules === */
 body {
     background-color: var(--achtergrond);
-    font-style: arial;
+    font-family: arial, sans-serif;
     padding: 5rem;
 }
 
 h1 {
     background-color: var(--tabblad);
     font-size: 1rem;
-    margin-right: 20rem;
-    box-shadow: -5px 5px 0px black;
+    width: 15rem;
+    padding: 1rem 2rem;
+    box-shadow: -0.5rem 0.5rem 0 var(--rand-kleur);
+    border: 0.25rem solid var(--rand-kleur);
+    border-bottom: 0;
+    font-weight: normal;
 }
 
 h2 {
-    background-color: white;
-    box-shadow: 5px 5px 0px black, -5px 5px 0px black;
-    padding: 1.5rem;
+    background-color: var(--kaart);
+    box-shadow: 0.5rem 0.5rem 0 var(--rand-kleur), -0.5rem 0.5rem 0 var(--rand-kleur);
+    padding: 2.5rem 2rem;
+    width: 35rem;
+    border: 0.25rem solid var(--rand-kleur);
+    font-size: 3rem;
 }
 
