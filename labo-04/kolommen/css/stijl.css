@@ -1,0 +1,50 @@
+/* stijl.css - labo 4, kolommen (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --darkturquoise: darkturquoise;
+    --darkviolet: darkviolet;
+    --deepskyblue: deepskyblue;
+}
+
+/* === your rules === */
+
+body {
+    color: white;
+    font-size: 4rem;
+    font-family: Arial, sans-serif;
+    margin: 10vh 4vw;
+}
+
+main {
+    display: flex;
+    gap: 4vw;
+    height: 80vh;
+    font-weight: bold;
+}
+
+main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main :nth-child(odd) {
+    flex: 1;
+}
+
+main :nth-child(even) {
+    flex: 2;
+}
+
+div:nth-child(1) {
+    background-color: var(--darkturquoise);
+}
+
+div:nth-child(2) {
+    background-color: var(--darkviolet);
+}
+
+div:nth-child(3) {
+    background-color: var(--deepskyblue);
+}
