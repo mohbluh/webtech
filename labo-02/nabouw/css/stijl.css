@@ -1,0 +1,88 @@
+:root {
+  --color-paper: #fbf7f0;
+  --color-ink: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-accent: #b5451b;
+  --color-zebra: #f1e9dc;
+  --font-heading: Georgia, serif;
+  --font-body: Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+}
+
+h1 {
+    color: var(--color-accent);
+    font-size: 2.75rem;
+}
+
+h2 {
+    color: var(--color-ink);
+    font-size: 1.75rem;
+}
+
+h3 {
+    color: var(--color-muted);
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+header p {
+    color: var(--color-muted);
+    font-size: 0.75rem;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+footer p a:hover, footer p a:focus {
+    color: var(--color-accent);
+}
+
+nav a:hover, nav a:focus {
+    color: var(--color-muted);
+}
+
+p a:hover, p a:focus {
+    color: var(--color-muted);
+}
+
+nav a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.intro {
+    font-size: 1.25rem;
+}
+
+.kaart li:nth-child(odd) {
+    background-color: var(--color-zebra);
+}
+
+.prijs {
+    color: var(--color-muted);
+}
+
+strong {
+    color: var(--color-accent);
+}
+
+footer, footer a {
+    text-align: center;
+    color: var(--color-muted);
+}
