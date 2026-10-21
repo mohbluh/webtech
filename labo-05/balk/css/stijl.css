@@ -2,7 +2,111 @@
 
 /* === tokens === */
 :root {
-
+    --color-papier: #f8f7f5;
+    --color-inkt: #1a1a1a;
+    --color-gedempt: #6b6b6b;
+    --color-balk: #000000;
+    --color-links: #9a9a9a;
+    --color-wit: #ffffff;
 }
 
 /* === your rules === */
+html {
+    scroll-padding-top: 3.5rem;
+}
+
+body {
+    background-color: var(--color-papier);
+    color: var(--color-inkt);
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 3.5rem;
+    background-color: var(--color-balk);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+header a {
+    color: var(--color-wit);
+    text-decoration: none;
+}
+
+header nav a {
+    color: var(--color-links);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a.actief,
+header nav a:hover,
+header nav a:focus {
+    color: var(--color-wit);
+}
+
+main {
+    max-width: 44rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.intro {
+    color: var(--color-gedempt);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+a {
+    color: var(--color-inkt);
+}
+
+.inhoud {
+    margin-bottom: 3rem;
+}
+
+section, section p {
+    margin-bottom: 3rem;
+}
+
+footer {
+    color: var(--color-links);
+    background-color: var(--color-balk);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+}
