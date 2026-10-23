@@ -2,7 +2,147 @@
 
 /* === tokens === */
 :root {
-
+    --kleur-papier: #f7f4ec;
+    --kleur-kaart: #ffffff;
+    --kleur-inkt: #2b2b2b;
+    --kleur-gedempt: #6b6b6b;
+    --kleur-balk: #1f3a2e;
+    --kleur-balk-tekst: #f3efe6;
+    --kleur-accent: #e6b53c;
+    --font-tekst: Verdana, sans-serif; 
+    --font-kop: Georgia, serif;
 }
 
 /* === your rules === */
+body {
+    font-family: var(--font-tekst);
+    line-height: 1.6;
+    color: var(--kleur-inkt);
+    background-color: var(--kleur-papier);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1, h2, .logo {
+    font-family: var(--font-kop);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--kleur-balk);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    padding: 0.25rem 2rem;
+}
+
+.logo {
+    color: var(--kleur-accent);
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--kleur-balk-tekst);
+}
+
+nav a.actief {
+    color: var(--kleur-accent);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--kleur-accent);
+    text-decoration: underline;
+}
+
+nav a.actief:hover,
+nav.actief:focus {
+    color: var(--kleur-balk-tekst);
+    text-decoration: underline;
+}
+
+main {
+    max-width: 60rem;
+    padding: 2rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro {
+    color: var(--kleur-gedempt);
+    margin-bottom: 2rem;
+}
+
+.kaarten {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.kaarten .uitgelicht {
+    grid-column: 1 / 3;
+}
+
+.kaart {
+    background-color: var(--kleur-kaart);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.kaart .soort {
+    color: var(--kleur-gedempt);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.kaart h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.kaart .beschrijving {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.knop {
+    background-color: var(--kleur-balk);
+    color: var(--kleur-balk-tekst);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.knop:hover,
+.knop:focus {
+    color: var(--kleur-inkt);
+}
+
+footer {
+    background-color: var(--kleur-balk);
+    color: var(--kleur-balk-tekst);
+    text-align: center;
+    padding: 1.25rem;
+}
