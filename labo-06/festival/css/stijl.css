@@ -1,0 +1,138 @@
+/* stijl.css - labo 6, festival (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --papier: #fff8ee;
+    --inkt: #1a1a1a;
+    --gedempt: #6b6b6b;
+    --accent: #d6341c;
+    --tekst: #fff;
+}
+
+/* === base: narrow screens first === */
+body {
+
+    color: var(--tekst);
+    background-color: var(--papier);
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    align-items: center;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--accent);
+    border-radius: 2rem;
+    margin: 0.5rem
+}
+
+nav a.actief {
+    color: var(--tekst);
+    background-color: var(--accent);
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--tekst);
+    color: var(--inkt);
+}
+
+.held {
+    background-color: var(--accent);
+    color: var(--tekst);
+    padding: clamp(2rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem);
+}
+
+.held h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+#programma {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 5vw, 4rem);
+    color: var(--inkt);
+}
+
+
+.programma li{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    list-style: none;
+    border-bottom: 1px solid #e3d9c8;
+}
+
+.programma time {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: bold;
+    min-width: 4rem;
+}
+
+.programma li span {
+    color: var(--gedempt);
+    margin-left: auto;
+}
+
+footer {
+    color: var(--gedempt);
+    text-align: center;
+    font-size: 0.875rem;
+    padding: 1rem;
+}
+/* === media queries: below the base rules === */
+@media (min-width:50rem) {
+    header {
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        margin: 0;
+    }
+}
+
+@media (min-width:75rem) {
+    header {
+        flex-direction: row;
+        padding: 1.5rem 3rem;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+}
