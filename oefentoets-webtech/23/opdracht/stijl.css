@@ -1,0 +1,325 @@
+/* drie basisstijlregels om je te helpen */
+:root {font-size: 100%;  /* zet je dit op 62.5%, dan is elke rem 10px waard, anders 16px */ 
+    --oranje: #f87f4b;
+    --roze: #fab8d3;
+    --groen: #37bb95;
+    --geel: #f0eb70;
+    --paars: #9270c4;
+    --grijs: #f5f5f5;
+    --zwart: black;
+}
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+/*
+Blijf rustig. Denk goed na. Blijf niet te lang hangen bij details.
+Studenten met kleurenblindheid: probeer de kleuren naar best vermogen aan te brengen. Maak je geen zorgen.
+Gebruikte kleuren:
+oranje / #f87f4b
+roze / #fab8d3
+groen / #37bb95
+geel / #f0eb70
+paars / #9270c4
+Verder: black (zwart) en #f5f5f5 (grijs)
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    padding: 1rem;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    border-bottom: 1px solid var(--zwart);
+}
+
+header h3 {
+    display: grid;
+    grid-template-rows: repeat(3, 6px);
+    width: 24px;
+    margin-bottom: 1rem;
+}
+
+h3 span {
+    border-bottom: 2px solid var(--zwart);
+}
+
+header h1 {
+    margin-inline: auto;
+    font-weight: bold;
+}
+
+nav {
+    display: none;
+}
+
+main {
+    grid-area: main;
+    margin-bottom: 1rem;
+}
+
+article {
+    display: grid;
+    grid-template-areas: 
+    "titel"
+    "tekst"
+    "afbeelding";
+    font-size: 0.8rem;
+}
+
+h2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+article h2, article h4 {
+    grid-area: titel;
+    display: flex;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--zwart);
+    margin-bottom: 1rem;
+}
+
+article h2 {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+article h4 {
+    justify-content: flex-end;
+}
+
+article p {
+    grid-area: tekst;
+    text-align: left;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+}
+
+article:first-child p > a {
+    color: #37bb95;
+}
+
+.figuur_1 {
+    grid-area: afbeelding;
+}
+
+.figuur {
+    border: 2px solid var(--zwart);
+}
+
+ul.figuur {
+    display: grid;
+    min-height: 20rem;
+    grid-template-rows: repeat(5, 1fr);
+
+
+    & li:nth-child(1) {
+        background-color: #f87f4b;
+    }
+
+    & li:nth-child(2) {
+            background-color: #fab8d3;
+    }   
+
+    & li:nth-child(3) {
+        background-color: #37bb95;
+    }
+
+    & li:nth-child(4) {
+        background-color: #f0eb70;
+    }
+
+    & li:nth-child(5) {
+        background-color: #9270c4;
+    }
+}
+
+article:last-child p {
+    grid-area: tekst;
+    text-align: left;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+}
+
+article:last-child p > a {
+    color: #f87f4b;
+}
+
+.figuur_2 {
+    background-image: url('afbeelding.jpg');
+    min-height: 20rem;
+    position: relative;
+    background-size: cover;
+}
+
+.figuur h3 {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    padding: 0.2rem;
+    background-color: white;
+    color: var(--paars);
+    font-weight: bold;
+}
+
+.figuur p:nth-of-type(1) {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: var(--oranje);
+    width: 2rem;
+    height: 2rem;
+}
+
+.figuur p:nth-of-type(2) {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--roze);
+    width: 2rem;
+    height: 2rem;
+}
+
+footer {
+    grid-area: footer;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 900px) {
+    body {
+        grid-template-areas:
+            "header main"
+            "header footer";
+    }
+
+    header {
+        border-bottom: 0px;
+        font-size: 1rem;
+        flex-direction: column;
+        text-align: left;
+        width: 16rem;
+    }
+
+    header h3 {
+        display: none;
+    }
+
+    header h1 {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        display: block;
+    }
+
+    header li {
+        margin-bottom: 0.5rem;
+    }
+
+    header a, header a:hover, header a:focus {
+        color: var(--paars);
+    }
+
+    header a.geselecteerd {
+        display: inline-block;
+        color: white;
+        background-color: var(--paars);
+        padding: 0.2rem;
+    }
+
+    ul.figuur {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+    
+
+        & li:nth-child(1) {
+            grid-column: 1 / 2;
+        }
+
+        & li:nth-child(2) {
+            grid-column: 2 / 4;
+        }
+
+        & li:nth-child(3) {
+            grid-column: 4 / -1;
+        }
+
+        & li:nth-child(4) {
+            grid-column: 1 / 4;
+        }
+
+        & li:nth-child(5) {
+            grid-column: 4 / -1;
+        }
+    }
+
+    .figuur p:nth-of-type(2) {
+            top: 0.5rem;
+            left: 3.5rem;
+        }
+}
+
+@media (min-width: 1200px) {
+    body {
+        grid-template-areas:
+            "main header"
+            "footer header";
+    }
+
+    header {
+        margin-left: 4rem;
+    }
+
+    ul.figuur {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+    
+
+    & li:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+    & li:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+        }
+
+    & li:nth-child(3) {
+            grid-column: 3 / 4;
+            grid-row: 1 / -1;
+        }
+
+    & li:nth-child(4) {
+            grid-column: 4 / 5;
+            grid-row: 2 / -1;
+        }
+
+    & li:nth-child(5) {
+            grid-column: 5 / 6;
+            grid-row: 3 / -1;
+        }
+    }
+
+    .figuur p:nth-of-type(1) {
+        right: 0.5rem;
+        left: unset;
+    }
+
+    .figuur p:nth-of-type(2) {
+        right: 3.5rem;
+        left: unset;
+    }
+}
