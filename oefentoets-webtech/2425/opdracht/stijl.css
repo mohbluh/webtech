@@ -1,0 +1,298 @@
+/* drie basisstijlregels om je te helpen */
+:root {font-size: 100%;  /* zet je dit op 62.5%, dan is elke rem 10px waard, anders 16px */ 
+    --color-dark: #3A3A3A;
+    --color-primary: #F8D755;
+    --color-white: #FFFFFF;
+    --color-section-bg: #5CA08D;
+    --color-main-ul-bg: #F4A15E;
+    --color-h4-bg: #D96A6D;
+    --color-p1-bg: #6A8D92;
+    --color-p2-bg: #8FA867;
+    --bg-pattern: url('patroon.jpg');
+}
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+/* Gebruikte kleuren
+#3A3A3A (zwart voor tekst en achtergrond h2 en footer)
+#F8D755 (achtergrond header en elementen binnen de main ul)
+white (wit dus)
+#5CA08D (achtergrond section)
+#F4A15E (achtergrond main ul)
+#D96A6D (achtergrond h4)
+#6A8D92 (achtergrond eerste p in de main)
+#8FA867 (achtergrond tweede p in de main)
+patroon.jpg (achtergrond derde p in de main)
+*/
+
+/* TIP! Voor de grid van de main > ul: denk aan gebruik van "color: transparent" en "overflow: hidden" */
+
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #3A3A3A;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-primary);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 1rem;
+}
+
+ul a {
+    color: var(--color-dark); 
+}
+
+nav a:hover, nav a:focus {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+}
+
+main > h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: var(--color-dark);
+    color: var(--color-white);    
+    flex-wrap: wrap;
+}
+
+span {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: var(--color-section-bg);
+    margin-right: auto;
+}
+
+section h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+section a {
+    display: flex;
+    margin-block: 1.5rem;
+    color: var(--color-dark);
+}
+
+main > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    gap: 0.5rem;
+    background-color: var(--color-main-ul-bg);
+}
+
+ul ~ li {
+    display: flex;
+}
+
+ul li:first-child, ul li:nth-child(3) {
+    margin-bottom: 1rem;
+}
+
+main ul li:first-child {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+main > h4 {
+    display: flex;
+    background-color: var(--color-h4-bg);
+    padding: 1rem;
+}
+
+main > p {
+    display: none;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 1rem 1.5rem;
+}
+
+@media (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 
+        "header main"
+        "header footer";
+        min-height: 100vh;
+    }
+
+    header {
+        grid-area: header;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    header h1 {
+        margin: 0;
+        padding: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+        justify-content: center;
+    }
+
+    ul li:first-child, ul li:nth-child(3) {
+        margin: 0;
+    }
+
+    nav ul li {
+        border-top: var(--color-dark) solid 1px;
+    }
+
+    nav a {
+        display: block;
+        padding: 2rem 3rem;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+
+    main h2 {
+        grid-column: 1/ -1;
+        grid-row: 1;
+        padding: 6rem 12rem;
+    }
+
+    main section {
+        grid-column: 1 / 6;
+        grid-row: 2;
+    }
+
+    main section a {
+        margin-bottom: 4.5rem;
+    }
+
+    main ul {
+        grid-column: 6 / 10;
+        grid-row: 2;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    main ul li  {
+        background-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+
+    main ul li a {
+        visibility: hidden;
+    }
+
+    main ul li:nth-of-type(1)  {
+        grid-column: 1 / 3;
+        grid-row: 1 / -1;
+        font-size: 0rem;
+    }
+
+    main ul li:nth-of-type(2)  {
+        grid-column: 3 / 7;
+        grid-row: 1;
+        font-size: 0rem;
+    }
+
+    main ul li:nth-of-type(3)  {
+        grid-column: 3 / 7;
+        grid-row: 2;
+        font-size: 0rem;
+    }
+
+    main ul li:nth-of-type(4)  {
+        grid-column: 7 / -1;
+        grid-row: 1 / -1;
+        font-size: 0rem;
+    }
+
+    main h4 {
+        grid-column: 10 / -1;
+        grid-row: 2;
+    }
+
+    main p {
+        display: grid;
+    }
+
+    main h4 ~ p:nth-of-type(1) {
+        grid-column: 1 / 5;
+        grid-row: 3;
+        padding: 1rem;
+        background-color: var(--color-p1-bg);
+    }
+
+    main p:nth-of-type(2) {
+        grid-column: 5 / 7;
+        grid-row: 3;
+        padding: 1rem;
+        background-color: var(--color-p2-bg);
+    }
+
+    main p:nth-of-type(3) {
+        grid-column: 7 / -1;
+        grid-row: 3;
+        padding: 1rem;
+        background-color: var(--color-primary);
+        background-image: url(patroon.jpg);
+        background-size: contain; 
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
